@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './RegistrationPage.css'
 
 const RegistrationPage = () => {
     const [formData, setFormData] = useState({
@@ -41,15 +42,14 @@ const RegistrationPage = () => {
                 setError(result.message || 'Registration error.');
             }
         } catch (err) {
-            setError('Network error: ' + err.message);
+            setError('Error: ' + err.message);
         }
     };
-
     return (
-        <div style={{ maxWidth: '400px', margin: '50px auto', padding: '20px', border: '1px solid #ccc', borderRadius: '10px' }}>
-            <h2>Registration</h2>
-            <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '15px' }}>
+        <div className="registration-container">
+            <h2>Registartion</h2>
+            <form className="registration-form" onSubmit={handleSubmit}>
+                <div>
                     <label htmlFor="username">Username:</label>
                     <input
                         type="text"
@@ -58,11 +58,10 @@ const RegistrationPage = () => {
                         value={formData.username}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '8px', margin: '5px 0', border: '1px solid #ccc', borderRadius: '4px' }}
                     />
                 </div>
 
-                <div style={{ marginBottom: '15px' }}>
+                <div>
                     <label htmlFor="email">Email:</label>
                     <input
                         type="email"
@@ -71,11 +70,10 @@ const RegistrationPage = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '8px', margin: '5px 0', border: '1px solid #ccc', borderRadius: '4px' }}
                     />
                 </div>
 
-                <div style={{ marginBottom: '15px' }}>
+                <div>
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
@@ -84,17 +82,14 @@ const RegistrationPage = () => {
                         value={formData.password}
                         onChange={handleChange}
                         required
-                        style={{ width: '100%', padding: '8px', margin: '5px 0', border: '1px solid #ccc', borderRadius: '4px' }}
                     />
                 </div>
 
-                <button type="submit" style={{ width: '100%', padding: '10px', backgroundColor: '#007BFF', color: '#fff', border: 'none', borderRadius: '4px' }}>
-                    Sign up
-                </button>
+                <button type="submit">Signup</button>
             </form>
 
-            {success && <p style={{ color: 'green', marginTop: '15px' }}>{success}</p>}
-            {error && <p style={{ color: 'red', marginTop: '15px' }}>{error}</p>}
+            {success && <p className="success-message">{success}</p>}
+            {error && <p className="error-message">{error}</p>}
         </div>
     );
 };
