@@ -1,0 +1,47 @@
+.collaboration-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .collaboration-sidebar {
+    width: 40%;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+  }
+  
+  .collaboration-sidebar h2 {
+    color: #333;
+  }
+  
+  .collaboration-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .participant {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+  }
+  
+  .participant p {
+    margin: 5px 0;
+  }
+  
+  .collaboration-details {
+    width: 60%;
+    padding: 20px;
+  }
+  
+  .collaboration-details h3 {
+    margin-top: 0;
+    color: #333;
+  }
+  
+  .collaboration-details p {
+    margin: 10px 0;
+    font-size: 16px;
+  }  
